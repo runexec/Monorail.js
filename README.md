@@ -41,45 +41,54 @@ Congratulations. Your DONE!<br />
 
 # Example
 
-Make a new page
-    $ ../monorail.js new page user
+Make a new page<br />
 
-Lets view our user view
-    $ cat views/user.xml 
-    <#CODE#> html_body = 'This code block takes 100% node.js code.'; </#CODE#>
+	$ ../monorail.js new page user
 
-Change it to this
-    <#CODE#> html_body = 'Viewing profile of '+username; </#CODE#>
+Lets view our user view<br />
 
-Lets view our user model
-    $ cat models/user.js 
-    var nohm = require('../lib/nohm').Nohm;
-    var redis = require('../lib/nohm/node_modules/redis');
+	$ cat views/user.xml 
+	<#CODE#>html_body = 'This code block takes 100% node.js code.';</#CODE#>
 
-    nohm.setClient(redis);
-    nohm.model('user',{});
-    var user = '';
-    exports.user = nohm.factory('user');
+Change it to this<br />
+
+	<#CODE#>html_body = 'Viewing profile of '+username;</#CODE#>
+
+Lets view our user model<br />
+
+	$ cat models/user.js 
+	
+	var nohm = require('../lib/nohm').Nohm;
+	var redis = require('../lib/nohm/node_modules/redis');
+	
+	nohm.setClient(redis);
+	nohm.model('user',{});
+	var user = '';
+	exports.user = nohm.factory('user');
 
 Lets add a controller to the bottom of route.js
-    app.get('/user/:name', function(req, res) {
-      user = req.params.name;
-      view = loadView('user',{ username : user });
-      page = railed('Viewing User - '+user, view);
-      res.send(page);
-    });
+<br />
 
-    app.listen(express_port);
+	app.get('/user/:name', function(req, res) {
+	  user = req.params.name;
+	  view = loadView('user',{ username : user });
+	  page = railed('Viewing User - '+user, view);
+	  res.send(page);
+	});
 
+	app.listen(express_port);
+      
 Lets start the server up and point our browser to http://localhost:8123/user/any_name_here
-	  $ ../monorail.js start server
-    Starting Redis...
-    Redis Running on Process 3822
-    Starting Express
-    Express Running on Process 3825
+
+	$ ../monorail.js start server
+	Starting Redis...
+	Redis Running on Process 3822
+	Starting Express
+	Express Running on Process 3825
+
 
 # Dependencies
-	nohm, Redis ORM @ https://github.com/maritz/nohm
+  nohm, Redis ORM @ https://github.com/maritz/nohm
   express, Webserver/router @ https://github.com/visionmedia/express
 
 # Documentation
@@ -92,6 +101,10 @@ http://expressjs.com/guide.html#route-middleware <br />
 http://expressjs.com/guide.html#route-param%20pre-conditions <br />
 	
 # Compatibility
+
+Built and tested with node v0.6.13
+nohm ORM vs 0.9.0
+express 2.58
 
 It has currently only been tested on unix, but should work on windows with little or no changes.
 
