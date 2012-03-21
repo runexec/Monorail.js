@@ -1,0 +1,18 @@
+header {
+	border-style: solid;
+	border-width: 0px 0px 2px 0px;
+	border-color: #000000;
+	margin: 0px auto 10px auto;
+	max-width: 80%;	
+	text-align: center;
+	background-color: #D9DCD7;
+}
+
+h3 {
+	text-align:left;
+	margin: 20px 20px 0px 20px;
+}
+body {
+	text-align:center;
+  	margin: 0px auto 0px auto;
+}
