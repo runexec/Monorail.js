@@ -102,10 +102,10 @@ http://expressjs.com/guide.html#route-param%20pre-conditions <br />
 	
 # Compatibility
 
-Built and tested with node v0.6.13
-nohm ORM vs 0.9.0
-express 2.58
-
+Built and tested with node v0.6.13<br />
+nohm ORM vs 0.9.0<br />
+express 2.58<br />
+<p />
 It has currently only been tested on unix, but should work on windows with little or no changes.
 
 # TODO
