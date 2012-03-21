@@ -86,11 +86,6 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 	Starting Express
 	Express Running on Process 3825
 
-
-# Dependencies
-  nohm, Redis ORM @ https://github.com/maritz/nohm
-  express, Webserver/router @ https://github.com/visionmedia/express
-
 # Documentation
 	
 ###### Routing
