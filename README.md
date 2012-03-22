@@ -1,4 +1,4 @@
-# Monorail.js - Ultra lightweight MVC for Node.js
+# Monorail.js - Ultra lightweight MVC Framework for Node.js
 
 	npm install Monorail.js
 
