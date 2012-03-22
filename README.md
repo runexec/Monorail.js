@@ -66,11 +66,10 @@ Lets view our user model<br />
 	
 	var nohm = require('../lib/nohm').Nohm;
 	var redis = require('../lib/nohm/node_modules/redis');
+	var client = redis.createClient();
 	
-	nohm.setClient(redis);
+	nohm.setClient(client);
 	nohm.model('user',{});
-	var user = '';
-	exports.user = nohm.factory('user');
 
 Lets add a controller to the bottom of route.js
 <br />
