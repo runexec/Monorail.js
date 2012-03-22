@@ -1,5 +1,7 @@
 # Monorail.js - Ultra lightweight MVC for Node.js
 
+	npm install Monorail.js
+
 No configuration required.<br />
 Zero Touch Configuration to get you up and running.<br />
 
