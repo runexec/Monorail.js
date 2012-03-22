@@ -94,7 +94,7 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 # Documentation
 
 ###### Redis ORM
-https://maritz.github.com/nohm/
+http://maritz.github.com/nohm/
 
 ###### Redis
 https://github.com/mranney/node_redis
