@@ -139,12 +139,10 @@ switch(routine) {
 						var data = [
 							"var nohm = require('../lib/nohm').Nohm;",
 							"var redis = require('../lib/nohm/node_modules/redis');",
+							"var client = redis.createClient();",
 							"",
-							"nohm.setClient(redis);",
-							"nohm.model('"+page_name+"',{});",
-							"var "+page_name+" = nohm.factory('"+page_name+"'); ",
-							"exports."+page_name+" = nohm.factory('"+page_name+"'); ",
-							""];
+							"nohm.setClient(client);",
+							"nohm.model('"+page_name+"',{});"];
 					}
 
 					for(i in data) {
@@ -241,7 +239,7 @@ switch(routine) {
 						
 							data = [
 								"var fs = require('fs');",
-								"var nohm = require('./lib/nohm');",
+								"var nohm = require('./lib/nohm').Nohm;",
 								"var redis = require('./lib/nohm/node_modules/redis');",
 								"var express = require('./lib/express');",
 								"var app = express.createServer();",
@@ -314,8 +312,9 @@ switch(routine) {
 								"}",
 								"",
 								"// Model Handlers",
-								"function loadModel(module_name) {",
-								"	return require('./models/'+module_name+'.js');",
+								"function loadModel(model_name) {",
+								"	require('./models/'+model_name+'.js');",
+								"	return nohm.factory(model_name);",
 								"}",
 								"",
 								"////////////////////--------------------------------!",
