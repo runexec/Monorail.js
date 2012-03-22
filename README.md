@@ -89,8 +89,11 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 	Express Running on Process 3825
 
 # Documentation
-	
-###### Routing
+
+###### Redis ORM
+http://maritz.github.com/nohm/
+
+###### Express Routing
 http://expressjs.com/guide.html#http-methods <br />
 http://expressjs.com/guide.html#routing <br />
 http://expressjs.com/guide.html#passing-route%20control <br />
