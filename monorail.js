@@ -142,8 +142,8 @@ switch(routine) {
 							"",
 							"nohm.setClient(redis);",
 							"nohm.model('"+page_name+"',{});",
-							"var "+page_name+" = '';",
-							"exports."+page_name+" = nohm.factory('"+page_name+"');",
+							"var "+page_name+" = nohm.factory('"+page_name+"'); ",
+							"exports."+page_name+";",
 							""];
 					}
 
