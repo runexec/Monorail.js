@@ -1,7 +1,11 @@
 # Monorail.js - Ultra lightweight MVC Framework for Node.js
 
 	npm install Monorail.js
+	
+Or start a project right now with <a href="https://github.com/runexec/Railing.sh">Railing.sh</a>
 
+	./railing.sh Project_Name
+	
 No configuration required.<br />
 Zero Touch Configuration to get you up and running.<br />
 
