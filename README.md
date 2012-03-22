@@ -94,7 +94,10 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 # Documentation
 
 ###### Redis ORM
-http://maritz.github.com/nohm/
+https://maritz.github.com/nohm/
+
+###### Redis
+https://github.com/mranney/node_redis
 
 ###### Express Routing
 http://expressjs.com/guide.html#http-methods <br />
