@@ -1,5 +1,7 @@
-[![endorse](http://api.coderwall.com/runexec/endorsecount.png)](http://coderwall.com/runexec) 
-# Monorail.js - Ultra lightweight MVC Framework for Node.js
+[![endorse](http://api.coderwall.com/runexec/endorsecount.png)](http://coderwall.com/runexec)
+## Monorail.js - Ultra lightweight MVC Framework for Node.js
+<img src="https://github.com/runexec/Monorail.js/raw/master/monorail.js.png" />
+<br />
 
 	npm install Monorail.js
 	
