@@ -46,7 +46,6 @@ Zero Touch Configuration to get you up and running.<br />
 Congratulations. Your DONE!<br />
 
 # Example
-
 Make a new page<br />
 
 	$ ../monorail.js new page user
@@ -90,6 +89,8 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 	Redis Running on Process 3822
 	Starting Express
 	Express Running on Process 3825
+
+There's more examples in the wiki. :)
 
 # Documentation
 
