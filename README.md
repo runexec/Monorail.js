@@ -75,7 +75,7 @@ Lets add a controller to the bottom of route.js
 
 	app.get('/user/:name', function(req, res) {
 	  user = req.params.name;
-	  view = loadView('user',{ username : user });
+	  view = loadView('user',{ username: user });
 	  page = railed('Viewing User - '+user, view);
 	  res.send(page);
 	});
