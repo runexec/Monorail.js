@@ -323,7 +323,7 @@ switch(routine) {
 								"	require('./models/'+model_name+'.js');",
 								"	nohm.factory(model_name, key_id, function(err, properties) {",
 								"		if(err){ return null; }else{ return properties; }",
-								"	}",
+								"	});",
 								"}",
 								"",
 								"////////////////////--------------------------------!",
