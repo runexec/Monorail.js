@@ -293,6 +293,8 @@ switch(routine) {
 								"app.use('/themes', express.static(__dirname + '/themes'));",
 								"app.use('/static', express.static(__dirname + '/static'));",
 								"",
+								"// We want to handle POST request",
+								"app.use(express.bodyParser());",
 								"",
 								"// View Handlers ",
 								"// All views must return all output to html_body local variable",
