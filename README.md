@@ -53,7 +53,7 @@ Zero Touch Configuration to get you up and running.<br />
     Starting Express
     Express Running on Process 3825
 
-Congratulations. Your DONE!<br />
+Congratulations. You're DONE!<br />
 
 # Example
 Lets install Mootools and RightJS
