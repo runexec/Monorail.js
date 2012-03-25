@@ -161,6 +161,7 @@ nohm ORM vs 0.9.0<br />
 express 2.58<br />
 
 # TODO
+Add easy escape/unescape functions<br />
 Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
