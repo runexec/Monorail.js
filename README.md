@@ -48,6 +48,24 @@ Zero Touch Configuration to get you up and running.<br />
 Congratulations. Your DONE!<br />
 
 # Example
+Lets install Mootools and RightJS
+
+	[user@machine tmp]$ ls 
+	Example  README.md  lib  monorail.js  monorail.js-small.png  monorail.js.png  package.json
+	[user@machine tmp]$ cd Example/
+	[user@machine Example]$ ../monorail.js install mootools
+	[user@machine Example]$ ../monorail.js install rightjs 
+	[user@machine Example]$ tree static/
+	static/
+	|-- css
+	|-- img
+	`-- js
+		  |-- mootools-core-1.4.5-full-compat.js
+		  `-- right-2.3.1.js
+
+	3 directories, 2 files
+
+
 Make a new page<br />
 
 	$ ../monorail.js new page user
@@ -98,6 +116,10 @@ There's more examples in the wiki. :)
 
 ###### Monorail.js
 https://github.com/runexec/Monorail.js/wiki
+
+###### Mootools & RightJS
+http://mootools.net/docs/core
+http://rightjs.org/docs
 
 ###### Redis ORM
 http://maritz.github.com/nohm/
