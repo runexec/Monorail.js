@@ -1,5 +1,13 @@
 [![endorse](http://api.coderwall.com/runexec/endorsecount.png)](http://coderwall.com/runexec)
 #### Monorail.js - Ultra lightweight MVC Framework for Node.js
+
+>**TLDR; Monorail.js will never force you, and uses only what you need.** <br />
+>Monorail.js **will never force you** to install anything not needed for your project. <br />
+>The goal is to **use what you need.** <br />
+>Anything other than creating a project will **always be optional**. <br />
+
+
+
 ![Monorail.js Logo](https://github.com/runexec/Monorail.js/raw/master/monorail.js-small.png)
 
 	npm install Monorail.js
@@ -48,6 +56,24 @@ Zero Touch Configuration to get you up and running.<br />
 Congratulations. Your DONE!<br />
 
 # Example
+Lets install Mootools and RightJS
+
+	[user@machine tmp]$ ls 
+	Example  README.md  lib  monorail.js  monorail.js-small.png  monorail.js.png  package.json
+	[user@machine tmp]$ cd Example/
+	[user@machine Example]$ ../monorail.js install mootools
+	[user@machine Example]$ ../monorail.js install rightjs 
+	[user@machine Example]$ tree static/
+	static/
+	|-- css
+	|-- img
+	`-- js
+		  |-- mootools-core-1.4.5-full-compat.js
+		  `-- right-2.3.1.js
+
+	3 directories, 2 files
+
+
 Make a new page<br />
 
 	$ ../monorail.js new page user
@@ -99,6 +125,10 @@ There's more examples in the wiki. :)
 ###### Monorail.js
 https://github.com/runexec/Monorail.js/wiki
 
+###### Mootools & RightJS
+http://mootools.net/docs/core <br />
+http://rightjs.org/docs
+
 ###### Redis ORM
 http://maritz.github.com/nohm/
 
@@ -120,10 +150,13 @@ nohm ORM vs 0.9.0<br />
 express 2.58<br />
 
 # TODO
+Add jQuery installer<br />
+Add Dojo Toolkit installer<br />
+Add PrototypeJS installer<br />
 Theme/Template documentation<br />
-Wiki-Examples coming very very soon.<br />
-Mootools or Right.js Integration<br />
+More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
+
 
 # License
 
