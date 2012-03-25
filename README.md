@@ -60,7 +60,15 @@ Lets install Mootools and RightJS
 
 	[user@machine tmp]$ ls 
 	Example  README.md  lib  monorail.js  monorail.js-small.png  monorail.js.png  package.json
+	
 	[user@machine tmp]$ cd Example/
+	
+	[user@machine Example]$ ../monorail.js
+	install [mootools | rightjs | jquery | dojo | prototype ] ; Install JS Framework in this project
+	start server ; Start project Redis & Express server
+	new project [project_name] ; Creates project
+	new page [page_name] ; Creates new project page
+	
 	[user@machine Example]$ ../monorail.js install mootools
 	[user@machine Example]$ ../monorail.js install rightjs 
 	[user@machine Example]$ tree static/
@@ -125,9 +133,12 @@ There's more examples in the wiki. :)
 ###### Monorail.js
 https://github.com/runexec/Monorail.js/wiki
 
-###### Mootools & RightJS
+###### JS Frameworks
+http://docs.jquery.com/Main_Page <br />
 http://mootools.net/docs/core <br />
-http://rightjs.org/docs
+http://rightjs.org/docs<br />
+http://api.prototypejs.org/ <br />
+http://dojotoolkit.org/documentation/ 
 
 ###### Redis ORM
 http://maritz.github.com/nohm/
@@ -150,9 +161,6 @@ nohm ORM vs 0.9.0<br />
 express 2.58<br />
 
 # TODO
-Add jQuery installer<br />
-Add Dojo Toolkit installer<br />
-Add PrototypeJS installer<br />
 Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
