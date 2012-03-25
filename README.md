@@ -143,8 +143,8 @@ express 2.58<br />
 
 # TODO
 Add jQuery installer<br />
-Add Dojo Toolkit<br />
-Add PrototypeJS<br />
+Add Dojo Toolkit installer<br />
+Add PrototypeJS installer<br />
 Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
