@@ -118,7 +118,7 @@ There's more examples in the wiki. :)
 https://github.com/runexec/Monorail.js/wiki
 
 ###### Mootools & RightJS
-http://mootools.net/docs/core
+http://mootools.net/docs/core <br />
 http://rightjs.org/docs
 
 ###### Redis ORM
