@@ -126,7 +126,7 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 	Starting Express
 	Express Running on Process 3825
 
-There's more examples in the wiki. :)
+There's more examples in the wiki :)
 
 # Documentation
 
