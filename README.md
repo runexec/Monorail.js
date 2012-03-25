@@ -1,5 +1,8 @@
 [![endorse](http://api.coderwall.com/runexec/endorsecount.png)](http://coderwall.com/runexec)
 #### Monorail.js - Ultra lightweight MVC Framework for Node.js
+
+###### Monorail.js will never force you to install anything not needed for your project.
+
 ![Monorail.js Logo](https://github.com/runexec/Monorail.js/raw/master/monorail.js-small.png)
 
 	npm install Monorail.js
