@@ -142,10 +142,13 @@ nohm ORM vs 0.9.0<br />
 express 2.58<br />
 
 # TODO
+Add jQuery installer<br />
+Add Dojo Toolkit<br />
+Add PrototypeJS<br />
 Theme/Template documentation<br />
-Wiki-Examples coming very very soon.<br />
-Mootools or Right.js Integration<br />
+More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
+
 
 # License
 
