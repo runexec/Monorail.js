@@ -16,5 +16,8 @@
   "optionalDependencies": {},
   "engines": {
     "node": "*"
+  },
+  "bin": {
+    "monorail": "monorail.js"
   }
 }
