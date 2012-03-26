@@ -162,8 +162,9 @@ express 2.58<br />
 
 # TODO
 Add easy html.escape/html.unescape functions<br />
-Auto update Monorail.js switch <br />
-Reset project switch <br />
+Add auto update Monorail.js switch <br />
+Add reset project switch <br />
+Add project snapshot/recover switch <br />
 Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
