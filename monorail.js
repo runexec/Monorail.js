@@ -39,6 +39,7 @@ var help = [
 	'start server ; Start project Redis & Express server',
 	'reset project ; Removes files from static, models, and views',
 	'summary ; Returns a project summary',
+	'hashtree ; Return a hash tree of the current project',
 	'new project [project_name] ; Creates project',
 	'new page [page_name] ; Creates new project page',
 	'new view [view_name] ; Creates view w/ no model',
