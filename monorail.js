@@ -37,6 +37,8 @@ var help = [
 	'start server ; Start project Redis & Express server',
 	'new project [project_name] ; Creates project',
 	'new page [page_name] ; Creates new project page',
+	'new view [view_name] ; Creates view w/ no model',
+	'new model [model_name] ; Creates model w/  no view'
 	].join('\n');
 
 var os = require('os').platform();
@@ -112,6 +114,41 @@ switch(routine) {
 		new_type = argv[3];
 		
 		switch(new_type) {
+		//
+		// New View
+		//
+		case "view":
+			view_name = argv[4];
+
+			if(!view_name) {
+				console.log(help);
+			}else{
+				fp = fs.createWriteStream('views/' + view_name + '.xml');
+				fp.write("<#CODE#> html_body = 'This code block takes 100% node.js code.'; </#CODE#>");
+			}
+			break;
+		//
+		// New Model
+		//
+		case "model":
+			model_name = argv[4];
+
+			if(!model_name) {
+				console.log(help);
+			}else{
+				fp = fs.createWriteStream('models/' + model_name + '.js');		
+				var data = [
+					"var nohm = require('../lib/nohm').Nohm;",
+					"var redis = require('../lib/nohm/node_modules/redis');",
+					"var client = redis.createClient();",
+					"",
+					"nohm.setClient(client);",
+					"nohm.model('"+model_name+"',{});"];
+				for(i in data) {
+					fp.write(data[i]+'\n', function (err) { if (err) throw err; });
+				}
+			}
+			break;
 		//
 		// New Page
 		//
