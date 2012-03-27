@@ -2,7 +2,7 @@
   "author": "Ryan Kelker (https://github.com/runexec)",
   "name": "Monorail.js",
   "description": "Ultra lightweight MVC for Node.js",
-  "version": "0.9.5",
+  "version": "0.9.8",
   "homepage": "https://github.com/runexec/Monorail.js",
   "repository": {
     "type": "git",
