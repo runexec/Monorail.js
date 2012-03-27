@@ -131,7 +131,7 @@ There's more examples in the wiki :)
 # Documentation
 <!-- For page#section navigation purposes. -->
 <a name="DOCS" style="display:none; visibilty:none;">DOCS Nav page#DOCS</a>
-<br /><br />
+<br />
 
 ###### Monorail.js
 https://github.com/runexec/Monorail.js/wiki
