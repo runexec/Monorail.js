@@ -6,8 +6,7 @@
 >The goal is to **use what you need.** <br />
 >Anything other than creating a project will **always be optional**. <br />
 
-
-
+Check out the [new features](#NEW) in **0.9.8**
 ![Monorail.js Logo](https://github.com/runexec/Monorail.js/raw/master/monorail.js-small.png)
 
 	npm install Monorail.js
@@ -128,9 +127,83 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 
 There's more examples in the wiki :)
 
+# What's new in 0.9.8
+<!-- For page#section navigation purposes. -->
+<a name="NEW"></a>
+
+		[user@machine Monorail.js]$ ./monorail.js new project Example
+		Creating Project Example
+		Making directory Example
+		Making directory Example/static
+		Making directory Example/static/img
+		Making directory Example/static/js
+		Making directory Example/static/css
+		Making directory Example/themes
+		Making directory Example/themes/classic
+		Making directory Example/themes/classic/img
+		Making directory Example/themes/classic/js
+		Making directory Example/themes/classic/css
+		Making directory Example/models
+		Making directory Example/views
+		Making file Example/monorail.project
+		Making file Example/routes.js
+		Making file Example/redis.config
+		Making file Example/themes/classic/classic.html
+		Making file Example/themes/classic/css/classic.css
+		Copying libs...
+		[user@machine Monorail.js]$ cd Example/
+		[user@machine Example]$ ls
+		lib  models  monorail.project  redis.config  routes.js  static  themes  views
+		
+		[user@machine Example]$ ../monorail.js 
+		install [mootools | rightjs | jquery | dojo | prototype ] ; Install JS Framework in this project
+		start server ; Start project Redis & Express server
+		reset project ; Removes files from static, models, and views
+		summary ; Returns a project summary
+		hashtree ; Return a hash tree of the current project
+		new project [project_name] ; Creates project
+		new page [page_name] ; Creates new project page
+		new view [view_name] ; Creates view w/ no model
+		new model [model_name] ; Creates model w/  no view
+		update ; Download the latest Monorail.js (script only)
+		
+		[user@machine Example]$ ../monorail.js new page home
+		[user@machine Example]$ ../monorail.js new view about
+		[user@machine Example]$ ../monorail.js new model user
+		[user@machine Example]$ ../monorail.js summary 
+		views: 2
+		models: 2
+		themes: 1
+		
+		[user@machine Example]$ ../monorail.js hashtree
+		./views/about.xml: 72c05ce377c77bf828f19290f6a984f3133cabbb
+		./views/home.xml: 6a1f00f99f017f79d7f683e080f7ebdfa5783211
+		./models/user.js: be9f2b1e2cf13d2c7ecdb65104b110593718600f
+		./models/home.js: 5bd607fa91b475405f49ba6314552c0ede345e99
+		./routes.js: cf579e914e61a235aab5ad25fc72d4052c42fa3d
+		./redis.config: c220348239ca26abdb54651cd7f340b2a98f0e83
+		./monorail.project: 958f07662d6ca27b36d744703094ed8d1e761341
+		
+		[user@machine Example]$ ../monorail.js reset project
+
+		WARNING: All files in the views, models, and static folders will be DELETED!
+		Type the word continue to continue: continue
+		Cleaning up ./views/about.xml...
+		Cleaning up ./views/home.xml...
+		Cleaning up ./models/home.js...
+		Cleaning up ./models/user.js...
+		Your project has been reset :)
+		
+		[user@machine Example]$ ../monorail.js update
+		Saving to new_monorail.js
+		
+		[user@machine Example]$ du -hs new_monorail.js 
+		888K	new_monorail.js
+
+
 # Documentation
 <!-- For page#section navigation purposes. -->
-<a name="DOCS" style="display:none; visibilty:none;">DOCS Nav page#DOCS</a>
+<a name="DOCS"></a>
 <br />
 
 ###### Monorail.js
@@ -165,7 +238,7 @@ express 2.58<br />
 
 # TODO
 <!-- For page#section navigation purposes. -->
-<a name="TODO" style="display:none; visibilty:none;">TODO Nav page#TODO</a>
+<a name="TODO"></a>
 <br />
 Create examples for the new switches below <br />
 Add easy html.escape/html.unescape functions <br />
