@@ -129,6 +129,9 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 There's more examples in the wiki :)
 
 # Documentation
+<!-- For page#section navigation purposes. -->
+<a name="DOCS" style="display:none; visibilty:none;">DOCS Nav page#DOCS</a>
+<br /><br />
 
 ###### Monorail.js
 https://github.com/runexec/Monorail.js/wiki
