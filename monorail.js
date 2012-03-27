@@ -31,6 +31,7 @@
 */
 var fs = require('fs');
 var rl = require('readline');
+var crypto = require('crypto');
 var argv = process.argv;
 var routine = argv[2];
 var help = [
@@ -47,6 +48,25 @@ var help = [
 var os = require('os').platform();
 
 switch(routine) {
+	case "hashtree":
+		var hashPaths = ['./views/', './models/', './themes/', './'];
+		hashPaths.forEach( function(hp) {
+			files = fs.readdirSync(hp);
+			files.forEach( function(fp) {
+				var actualPath = hp+fp;
+				
+				function statHandler(err, stats) {
+					if(! stats.isDirectory()) {
+						var data = fs.readFileSync(actualPath);
+						var hash = crypto.createHash('sha1','utf8').update(data).digest('hex');
+						
+						console.log(actualPath + ': ' + hash);
+					}	
+				}
+				fs.lstat(actualPath, statHandler)
+			});
+		});
+		break;
 	//
 	// Summary
 	//
