@@ -176,8 +176,8 @@ Add recover snapshot switch <br />
 Add compare snapshot switch <br />
 Add clear snapshots switch <br />
 Add build hash tree switch <br />
-Add create model (independent of view) switch <br />
-Add create view (independent of model) switch <br />
+<del>Add create model (independent of view) switch</del> <br />
+<del>Add create view (independent of model) switch</del> <br />
 Add project summary switch <br />
 Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
