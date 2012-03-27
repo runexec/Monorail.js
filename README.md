@@ -16,7 +16,7 @@ Or start a project right now with <a href="https://github.com/runexec/Railing.sh
 
 	./railing.sh Project_Name
 	
-No configuration required.<br />
+**No configuration required.**<br />
 Zero Touch Configuration to get you up and running.<br />
 
     $ ./monorail.js new project example
