@@ -32,6 +32,7 @@
 var fs = require('fs');
 var rl = require('readline');
 var crypto = require('crypto');
+var https = require('https');
 var argv = process.argv;
 var routine = argv[2];
 var help = [
@@ -43,12 +44,35 @@ var help = [
 	'new project [project_name] ; Creates project',
 	'new page [page_name] ; Creates new project page',
 	'new view [view_name] ; Creates view w/ no model',
-	'new model [model_name] ; Creates model w/  no view'
+	'new model [model_name] ; Creates model w/  no view',
+	'update ; Download the latest Monorail.js (script only)'
 	].join('\n');
 
 var os = require('os').platform();
 
 switch(routine) {
+	//
+	// Update
+	//
+	case "update":
+		var updateURL = '/runexec/Monorail.js/master/monorail.js';
+		var details = {host: 'raw.github.com', path: updateURL};
+
+		https.get(details, function(res) {
+			var data = '';
+			res.setEncoding('utf8');
+			save_file = 'new_monorail.js';
+			console.log('Saving to '+save_file);
+
+			res.on('data', function(chunk) {
+				data += chunk;
+				fs.writeFileSync(save_file, data);
+			});
+		});
+		break;
+	//
+	// Hash Tree
+	//
 	case "hashtree":
 		var hashPaths = ['./views/', './models/', './themes/', './'];
 		hashPaths.forEach( function(hp) {
