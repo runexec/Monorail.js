@@ -175,7 +175,7 @@ Add create snapshot switch <br />
 Add recover snapshot switch <br />
 Add compare snapshot switch <br />
 Add clear snapshots switch <br />
-Add build hash tree switch <br />
+<del>Add build hash tree switch </del><br />
 <del>Add create model (independent of view) switch</del> <br />
 <del>Add create view (independent of model) switch</del> <br />
 <del>Add project summary switch</del> <br />
