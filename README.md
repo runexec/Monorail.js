@@ -161,8 +161,6 @@ nohm ORM vs 0.9.0<br />
 express 2.58<br />
 
 # TODO
-<!-- For page#nav purposes -->
-<div id="TODO" name="TODO" style="display:none;"></div>
 
 Create examples for the new switches below <br />
 Add easy html.escape/html.unescape functions <br />
@@ -180,6 +178,8 @@ Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
 
+<!-- For page#section navigation purposes. -->
+<a name="TODO" style="display:none; visibilty:none;">TODO ^</a>
 
 # License
 
