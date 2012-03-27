@@ -153,6 +153,7 @@ switch(routine) {
 						} // end for delPaths
 						
 						console.log('Your project has been reset :)');
+						process.exit(0);
 					}
 				} // end function resetHandler
 
