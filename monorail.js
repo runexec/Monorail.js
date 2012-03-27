@@ -30,6 +30,7 @@
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 var fs = require('fs');
+var rl = require('readline');
 var argv = process.argv;
 var routine = argv[2];
 var help = [
@@ -45,7 +46,57 @@ var os = require('os').platform();
 
 switch(routine) {
 	//
-	// Start Project Redis Server
+	// Reset [sequence]
+	//
+	case "reset":
+		reset_type = argv[3];
+		
+		switch(reset_type) {
+			//
+			// Reset Project
+			//
+			case "project":
+				input = rl.createInterface(process.stdin, process.stdout, null);
+
+				function resetHandler(answer) {
+					if(answer == 'continue')
+					{
+						//
+						// Delete Project Items
+						//
+						delPaths = ['./views/', './models/', './static/'];
+						
+						for(p in delPaths) {
+							realPath = delPaths[p];
+							deleteItems = fs.readdirSync(realPath);
+
+							for(i in deleteItems) {
+								cleaning = deleteItems[i];
+								delPath = realPath+cleaning;
+								
+								if(!fs.lstatSync(delPath).isDirectory()) {
+									console.log('Cleaning up ' + delPath + '...');
+									fs.unlinkSync(delPath);
+								}
+							}
+						} // end for delPaths
+						
+						console.log('Your project has been reset :)');
+					}
+					process.exit(0);
+				} // end function resetHandler
+
+				warning = "WARNING: All files in the views, models, and static folders will be DELETED!"
+					+ "\nType the word continue to continue: ";
+
+				input.question(warning, resetHandler);
+				break;
+
+			default: console.log(help);
+		}
+		break;
+	//
+	// Start [sequence]
 	//
 	case "start":
 		start_type = argv[3];

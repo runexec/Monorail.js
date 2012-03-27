@@ -170,7 +170,7 @@ express 2.58<br />
 Create examples for the new switches below <br />
 Add easy html.escape/html.unescape functions <br />
 Add update Monorail.js switch <br />
-Add reset project switch <br />
+<del>Add reset project switch</del> <br />
 Add create snapshot switch <br />
 Add recover snapshot switch <br />
 Add compare snapshot switch <br />
