@@ -161,10 +161,18 @@ nohm ORM vs 0.9.0<br />
 express 2.58<br />
 
 # TODO
-Add easy html.escape/html.unescape functions<br />
-Add auto update Monorail.js switch <br />
+Create examples for the new switche below <br />
+Add easy html.escape/html.unescape functions <br />
+Add update Monorail.js switch <br />
 Add reset project switch <br />
-Add project snapshot/recover switch <br />
+Add create snapshot switch <br />
+Add recover snapshot switch <br />
+Add compare snapshot switch <br />
+Add clear snapshots switch <br />
+Add build hash tree switch <br />
+Add create model (independent of view) switch <br />
+Add create view (independent of model) switch <br />
+Add project summary switch <br />
 Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
