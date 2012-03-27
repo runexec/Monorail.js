@@ -70,8 +70,6 @@ switch(routine) {
 			}
 
 		}// end for sumPaths
-
-		process.exit(0);
 		break;
 	//
 	// Reset [sequence]
@@ -111,7 +109,6 @@ switch(routine) {
 						
 						console.log('Your project has been reset :)');
 					}
-					process.exit(0);
 				} // end function resetHandler
 
 				warning = "WARNING: All files in the views, models, and static folders will be DELETED!"
@@ -10718,5 +10715,3 @@ switch(routine) {
 		break;
 	default: console.log(help);
 }
-
-process.exit(0);
