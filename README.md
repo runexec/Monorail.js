@@ -161,7 +161,9 @@ nohm ORM vs 0.9.0<br />
 express 2.58<br />
 
 # TODO
-
+<!-- For page#section navigation purposes. -->
+<a name="TODO" style="display:none; visibilty:none;">TODO Nav page#TODO</a>
+<br />
 Create examples for the new switches below <br />
 Add easy html.escape/html.unescape functions <br />
 Add update Monorail.js switch <br />
@@ -178,8 +180,6 @@ Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
 
-<!-- For page#section navigation purposes. -->
-<a name="TODO" style="display:none; visibilty:none;">TODO ^</a>
 
 # License
 
