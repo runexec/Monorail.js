@@ -204,7 +204,6 @@ There's more examples in the wiki :)
 # Documentation
 <!-- For page#section navigation purposes. -->
 <a name="DOCS"></a>
-<br />
 
 ###### Monorail.js
 https://github.com/runexec/Monorail.js/wiki
@@ -222,7 +221,8 @@ http://maritz.github.com/nohm/
 ###### Redis
 https://github.com/mranney/node_redis
 
-###### Express Routing
+###### Express Routing, Cookies, and Sessions
+http://expressjs.com/guide.html#session-support <br />
 http://expressjs.com/guide.html#http-methods <br />
 http://expressjs.com/guide.html#routing <br />
 http://expressjs.com/guide.html#passing-route%20control <br />
