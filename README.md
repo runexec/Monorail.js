@@ -178,7 +178,7 @@ Add clear snapshots switch <br />
 Add build hash tree switch <br />
 <del>Add create model (independent of view) switch</del> <br />
 <del>Add create view (independent of model) switch</del> <br />
-Add project summary switch <br />
+<del>Add project summary switch</del> <br />
 Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />

@@ -36,6 +36,8 @@ var routine = argv[2];
 var help = [
 	'install [mootools | rightjs | jquery | dojo | prototype ] ; Install JS Framework in this project', 
 	'start server ; Start project Redis & Express server',
+	'reset project ; Removes files from static, models, and views',
+	'summary ; Returns a project summary',
 	'new project [project_name] ; Creates project',
 	'new page [page_name] ; Creates new project page',
 	'new view [view_name] ; Creates view w/ no model',
@@ -45,6 +47,32 @@ var help = [
 var os = require('os').platform();
 
 switch(routine) {
+	//
+	// Summary
+	//
+	case "summary":
+		sumPaths = ['./views/', './models/', './themes/', './routes.js'];
+
+		for(p in sumPaths) {
+			realPath = sumPaths[p];
+
+			count = 0
+			if(fs.lstatSync(realPath).isDirectory()) {
+				sumItems = fs.readdirSync(realPath);
+
+				for(s in sumItems) {
+					sumItem = realPath+sumItems[s];
+					count++;
+				}
+
+				attribute = realPath.split('/')[1];
+				console.log(attribute + ': ' + count);
+			}
+
+		}// end for sumPaths
+
+		process.exit(0);
+		break;
 	//
 	// Reset [sequence]
 	//
@@ -10690,3 +10718,5 @@ switch(routine) {
 		break;
 	default: console.log(help);
 }
+
+process.exit(0);
