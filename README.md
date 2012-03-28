@@ -6,7 +6,6 @@
 >The goal is to **use what you need.** <br />
 >Anything other than creating a project will **always be optional**. <br />
 
-Check out the [new features](#NEW) in **0.9.8**
 ![Monorail.js Logo](https://github.com/runexec/Monorail.js/raw/master/monorail.js-small.png)
 
 	npm install Monorail.js
@@ -16,6 +15,7 @@ Or start a project right now with <a href="https://github.com/runexec/Railing.sh
 	./railing.sh Project_Name
 	
 **No configuration required.**<br />
+Check out the [new features](#NEW) in **0.9.9** <br />
 Zero Touch Configuration to get you up and running.<br />
 
     $ ./monorail.js new project example
@@ -154,18 +154,57 @@ There's more examples in the wiki :)
 		[user@machine Monorail.js]$ cd Example/
 		[user@machine Example]$ ls
 		lib  models  monorail.project  redis.config  routes.js  static  themes  views
-		
+
 		[user@machine Example]$ ../monorail.js 
-		install [mootools | rightjs | jquery | dojo | prototype ] ; Install JS Framework in this project
-		start server ; Start project Redis & Express server
-		reset project ; Removes files from static, models, and views
-		summary ; Returns a project summary
-		hashtree ; Return a hash tree of the current project
-		new project [project_name] ; Creates project
-		new page [page_name] ; Creates new project page
-		new view [view_name] ; Creates view w/ no model
-		new model [model_name] ; Creates model w/  no view
-		update ; Download the latest Monorail.js (script only)
+		hashtree 
+		|_ Return a hash tree of the current project
+
+		install [mootools | rightjs | jquery | dojo | prototype ] 
+		|_ Install JS Framework in this project
+
+		new model [model_name] 
+		|_ Creates model w/  no view
+
+		new page [page_name] 
+		|_ Creates new project page
+
+		new project [project_name] 
+		|_ Creates project
+
+		new view [view_name] 
+		|_ Creates view w/ no model
+
+		reset project 
+		|_ Removes files from static, models, and views
+
+		snapshot [ create | clean ] 
+		|_ backup your models, views, and routes
+
+		start server 
+		|_ Start project Redis & Express server
+
+		summary 
+		|_ Returns a project summary
+
+		update 
+		|_ Download the latest Monorail.js (script only)
+
+		[user@machine Example]$ ../monorail.js snapshot create
+		Saved
+		[user@machine Example]$ ls -l snapshots/
+		total 16
+		-rw-r--r-- 1 user users 3371 Mar 29 00:58 2012.03.28T15.58.43.524Z.zip
+		-rw-r--r-- 1 user users 3371 Mar 29 00:58 2012.03.28T15.58.45.467Z.zip
+		-rw-r--r-- 1 user users 3371 Mar 29 00:58 2012.03.28T15.58.46.133Z.zip
+		-rw-r--r-- 1 user users 3371 Mar 29 00:58 2012.03.28T15.58.46.829Z.zip
+		[user@machine Example]$ ../monorail.js snapshot clean
+
+		WARNING: All snapshots will be DELETED!
+		Type continue to continue: continue
+		Snapshots deleted.
+
+		[user@machine Example]$ ls -l snapshots/
+		total 0
 		
 		[user@machine Example]$ ../monorail.js new page home
 		[user@machine Example]$ ../monorail.js new view about
@@ -244,10 +283,10 @@ Create examples for the new switches below <br />
 Add easy html.escape/html.unescape functions <br />
 <del>Add update Monorail.js switch</del> <br />
 <del>Add reset project switch</del> <br />
-Add create snapshot switch <br />
-Add recover snapshot switch <br />
-Add compare snapshot switch <br />
-Add clear snapshots switch <br />
+<del>Add create snapshot switch</del><br />
+(MAYBE) Add recover snapshot switch <br />
+(MAYBE) Add compare snapshot switch <br />
+<del>Add clear snapshots switch</del><br />
 <del>Add build hash tree switch </del><br />
 <del>Add create model (independent of view) switch</del> <br />
 <del>Add create view (independent of model) switch</del> <br />

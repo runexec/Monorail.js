@@ -33,6 +33,7 @@ var fs = require('fs');
 var rl = require('readline');
 var crypto = require('crypto');
 var https = require('https');
+var zip = require('./lib/node-native-zip');
 var argv = process.argv;
 var routine = argv[2];
 var help = [
@@ -41,16 +42,92 @@ var help = [
 	'reset project ; Removes files from static, models, and views',
 	'summary ; Returns a project summary',
 	'hashtree ; Return a hash tree of the current project',
+	'snapshot [ create | clean ] ; backup your models, views, and routes',
 	'new project [project_name] ; Creates project',
 	'new page [page_name] ; Creates new project page',
 	'new view [view_name] ; Creates view w/ no model',
 	'new model [model_name] ; Creates model w/  no view',
 	'update ; Download the latest Monorail.js (script only)'
-	].join('\n');
+	].sort();
+
+help = '\n' + help.join('\n\n').replace(/;/g,'\n|_');
 
 var os = require('os').platform();
-
 switch(routine) {
+	//
+	// Snapshot
+	//
+	case "snapshot":
+		var snapshotType = argv[3];
+		var snapshotDirs = ['./views/', './models/', './'];
+		var snapshotDir = './snapshots'
+		
+		function statHandler(err, stats) {
+			if(err) {
+				fs.mkdirSync(snapshotDir);
+			}
+		}
+		fs.lstat(snapshotDir, statHandler);
+		
+		//
+		// Snapshot Types
+		//
+		switch(snapshotType) {
+			//
+			// Snapshot Create
+			//
+			case "create":
+				var date = new Date();
+				var snapshotName = date.toISOString().replace(/:/g,'.').replace(/-/g,'.')
+					+ '.zip';
+				var snapshotFile = new zip();
+				var files = [];
+
+				snapshotDirs.forEach( function loadFiles(dir) {
+					fs.readdirSync(dir).forEach( function fileHandler(fp) {
+						var realPath = dir+fp;
+						if(fs.lstatSync(realPath).isFile()) {
+							files.push({
+								name: realPath,
+								path: realPath
+							});
+						}	
+					});
+				});
+
+				snapshotFile.addFiles(files, function zipHandler(err){
+					if(err) throw err;
+					var buff = snapshotFile.toBuffer();
+					fs.writeFile(snapshotDir + '/' + snapshotName, buff, function onEnd(err) {
+						if(err) throw err;
+						console.log('Saved');
+					});
+				});
+				break;
+			//
+			// Snapshot Clean
+			//
+			case "clean":
+				var input = rl.createInterface(process.stdin, process.stdout, null);
+				var warning = 'WARNING: All snapshots will be DELETED!';
+				warning += '\nType continue to continue: ';
+
+				input.question(warning, function handler(answer) {
+					if(answer === 'continue') {
+						fs.readdirSync(snapshotDir).forEach( function unlinkFile(fp) {
+							fs.unlinkSync(snapshotDir + '/' + fp);
+						});
+						fs.rmdirSync(snapshotDir);
+						fs.mkdirSync(snapshotDir);
+						console.log('Snapshots deleted.');
+						process.exit(0);
+					}
+				});	
+				break;
+			
+			default: console.log(help);
+		}
+		break;
 	//
 	// Update
 	//
