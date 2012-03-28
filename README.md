@@ -15,7 +15,6 @@ Or start a project right now with <a href="https://github.com/runexec/Railing.sh
 	./railing.sh Project_Name
 	
 **No configuration required.**<br />
-Check out the [new features](#NEW) in **0.9.9** <br />
 Zero Touch Configuration to get you up and running.<br />
 
     $ ./monorail.js new project example
@@ -127,7 +126,7 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 
 There's more examples in the wiki :)
 
-# What's new in 0.9.8
+# What's new in 0.9.9
 <!-- For page#section navigation purposes. -->
 <a name="NEW"></a>
 
