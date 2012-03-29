@@ -305,7 +305,7 @@ express 2.58<br />
 <br />
 Add easy html.escape/html.unescape functions <br />
 <del>Create examples for the new switches below</del> <br />
-<del>Add scaffolding</del>br />
+<del>Add scaffolding</del><br />
 <del>Add update Monorail.js switch</del> <br />
 <del>Add reset project switch</del> <br />
 <del>Add create snapshot switch</del><br />
