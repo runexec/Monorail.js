@@ -47,13 +47,80 @@ var help = [
 	'new page [page_name] ; Creates new project page',
 	'new view [view_name] ; Creates view w/ no model',
 	'new model [model_name] ; Creates model w/  no view',
-	'update ; Download the latest Monorail.js (script only)'
+	'update ; Download the latest Monorail.js (script only)',
+	'generate [model_name] [properties] ; Scaffold modelName name:type name:type etc...'
 	].sort();
 
 help = '\n' + help.join('\n\n').replace(/;/g,'\n|_');
 
 var os = require('os').platform();
 switch(routine) {
+	//
+	// Generate
+	//
+	case "generate":
+		var modelName = argv[3];
+		var thisModel = [];
+		var genKeyStart = 4;
+		var genKeys = [];
+		var valid = /\w:(^function|string|timestamp|json|boolean|integer|float)$/gi;
+		var firstProperty = true;
+		// three space tab and not \t
+		var tab = '   ';
+		var v = 0;
+
+
+		if(!modelName) {
+			throw 'Invalid: model name';
+		}
+		
+		if(!argv[4]) {
+			throw 'Invalid: null property';
+		}
+
+		console.log('Generating model '+modelName);
+
+		var modelString = [
+					"var nohm = require('../lib/nohm').Nohm;",
+					"var redis = require('../lib/nohm/node_modules/redis');",
+					"var client = redis.createClient();",
+					"",
+					"nohm.setClient(client);\n"
+						].join('\n');
+
+			modelString += "nohm.model('"+modelName+"', {\n";
+			modelString += tab+"idGenerator: 'increment',\n";
+			modelString += tab+'properties: {\n';
+
+		argv.forEach( function generator(value) {
+			if(v >= genKeyStart) {
+				if(value.match(valid)) {
+					var stub = value.split(':');
+					var pName = stub[0];
+					var pType = stub[1];
+
+					console.log(pName + '\n|_' + pType);
+					
+					if(!firstProperty && argv.size != v) {
+						modelString += ',\n';
+					}
+
+					modelString += tab+tab+pName+': {\n';
+					modelString += tab+tab+tab+"type: '"+pType+"',\n";
+					modelString += tab+tab+tab+"validations: ['notEmpty']\n";
+					modelString += tab+tab+'}';
+					firstProperty = false;
+
+				}else{ throw 'Generator error: Invalid format for > '+value; }
+				// end error
+			
+			}// end if 
+			v++;
+		});
+
+		modelString += '\n'+tab+'}\n});';		
+		fs.writeFileSync('./models/' + modelName + '.js', modelString);
+		break;
 	//
 	// Snapshot
 	//
@@ -67,8 +134,7 @@ switch(routine) {
 				fs.mkdirSync(snapshotDir);
 			}
 		}
-		fs.lstat(snapshotDir, statHandler);
-		
+		fs.lstat(snapshotDir, statHandler);		
 		//
 		// Snapshot Types
 		//

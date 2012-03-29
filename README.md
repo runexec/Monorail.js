@@ -5,6 +5,7 @@
 >Monorail.js **will never force you** to install anything not needed for your project. <br />
 >The goal is to **use what you need.** <br />
 >Anything other than creating a project will **always be optional**. <br />
+>**Scaffold models in seconds**
 
 ![Monorail.js Logo](https://github.com/runexec/Monorail.js/raw/master/monorail.js-small.png)
 
@@ -126,7 +127,31 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 
 There's more examples in the wiki :)
 
-# What's new in 0.9.9
+# Scaffolding in Node.js
+<a name="SCAFFOLD"></a>
+
+		[user@machine Exampel]$ ../monorial.js generate blogpost title:string pubDate:timestamp
+		[user@machine Example]$ cat models/blogpost.js
+		var nohm = require('../lib/nohm').Nohm;
+		var redis = require('../lib/nohm/node_modules/redis');
+		var client = redis.createClient();
+
+		nohm.setClient(client);
+		nohm.model('blogpost', {
+			 idGenerator: 'increment',
+			 properties: {
+				  title: {
+				     type: 'string',
+				     validations: ['notEmpty']
+				  },
+				  pubDate: {
+				     type: 'timestamp',
+				     validations: ['notEmpty']
+				  }
+			 }
+		});
+
+# What's new in version 1
 <!-- For page#section navigation purposes. -->
 <a name="NEW"></a>
 
@@ -278,9 +303,9 @@ express 2.58<br />
 <!-- For page#section navigation purposes. -->
 <a name="TODO"></a>
 <br />
-Create examples for the new switches below <br />
 Add easy html.escape/html.unescape functions <br />
-Add scaffolding :) <br />
+<del>Create examples for the new switches below</del> <br />
+<del>Add scaffolding</del>br />
 <del>Add update Monorail.js switch</del> <br />
 <del>Add reset project switch</del> <br />
 <del>Add create snapshot switch</del><br />
@@ -289,8 +314,8 @@ Add scaffolding :) <br />
 <del>Add create model (independent of view) switch</del> <br />
 <del>Add create view (independent of model) switch</del> <br />
 <del>Add project summary switch</del> <br />
-(MAYBE) Add recover snapshot switch <br />
-(MAYBE) Add compare snapshot switch <br />
+<del>(MAYBE) Add recover snapshot switch</del>Never <br />
+<del>(MAYBE) Add compare snapshot switch</del>Never <br />
 Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
