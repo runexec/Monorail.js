@@ -280,16 +280,17 @@ express 2.58<br />
 <br />
 Create examples for the new switches below <br />
 Add easy html.escape/html.unescape functions <br />
+Add scaffolding :) <br />
 <del>Add update Monorail.js switch</del> <br />
 <del>Add reset project switch</del> <br />
 <del>Add create snapshot switch</del><br />
-(MAYBE) Add recover snapshot switch <br />
-(MAYBE) Add compare snapshot switch <br />
 <del>Add clear snapshots switch</del><br />
 <del>Add build hash tree switch </del><br />
 <del>Add create model (independent of view) switch</del> <br />
 <del>Add create view (independent of model) switch</del> <br />
 <del>Add project summary switch</del> <br />
+(MAYBE) Add recover snapshot switch <br />
+(MAYBE) Add compare snapshot switch <br />
 Theme/Template documentation<br />
 More Wiki-Examples coming very very soon.<br />
 Heavy Bug Testing<br />
