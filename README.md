@@ -126,10 +126,8 @@ Lets start the server up and point our browser to http://localhost:8123/user/any
 	Express Running on Process 3825
 
 There's more examples in the wiki :)
-
+<a href="#SCAFFOLD" name="SCAFFOLD"></a>
 # Scaffolding in Node.js
-<a name="SCAFFOLD"></a>
-
 		[user@machine Exampel]$ ../monorial.js generate blogpost title:string pubDate:timestamp
 		[user@machine Example]$ cat models/blogpost.js
 		var nohm = require('../lib/nohm').Nohm;
