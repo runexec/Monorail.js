@@ -107,7 +107,11 @@ switch(routine) {
 
 					modelString += tab+tab+pName+': {\n';
 					modelString += tab+tab+tab+"type: '"+pType+"',\n";
-					modelString += tab+tab+tab+"validations: ['notEmpty']\n";
+					if(pType === 'timestamp') {	
+						modelString += tab+tab+tab+"defaultValue: new Date()\n";
+					}else{
+						modelString += tab+tab+tab+"validations: ['notEmpty']\n";
+					}
 					modelString += tab+tab+'}';
 					firstProperty = false;
 
