@@ -144,7 +144,7 @@ There's more examples in the wiki :)
 				  },
 				  pubDate: {
 				     type: 'timestamp',
-				     validations: ['notEmpty']
+				     defaultValue: new Date()
 				  }
 			 }
 		});
