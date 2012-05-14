@@ -718,7 +718,7 @@ switch(routine) {
 					//
 					copy_op = '';
 
-					if(os.indexOf("win") == -1) {
+					if(os.indexOf('window') == -1) {
 						copy_op = 'cp -vrf ./lib '+ project_name +'/lib';
 					}else{
 						copy_op = 'XCOPY lib '+ project_name +'\\lib';
