@@ -1,6 +1,8 @@
 [![endorse](http://api.coderwall.com/runexec/endorsecount.png)](http://coderwall.com/runexec)
 #### Monorail.js - Ultra lightweight MVC Framework for Node.js
 
+NOTICE: It works, but I don't plan on maintaining it.
+
 >**TLDR; Monorail.js will never force you, and uses only what you need.** <br />
 >Monorail.js **will never force you** to install anything not needed for your project. <br />
 >The goal is to **use what you need.** <br />
